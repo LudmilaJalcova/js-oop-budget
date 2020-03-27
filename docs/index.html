@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/309301a1d1.js" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+
+    <style>
+      #btn-calculate:hover {
+        background-color: green !important;
+        color: white !important;
+      }
+
+      #btn-add-expense:hover {
+        background-color: purple !important;
+        color: white !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4">
+          <h1>BUDGET APP</h1>
+          <form action="#">
+            <div class="form-group p-4" style="border: 1px solid green;">
+              <label for="budget">Please Enter Your Budget</label>
+              <input type="number" class="form-control" id="input-budget">
+              <div class="invalid-feedback">
+                Please type your budget!
+              </div>
+              <button type="submit"
+                style="border: 1px solid green; background-color: transparent; color: green;"
+                class="btn btn-primary mt-3" id="btn-calculate">Calculate</button>
+            </div>
+          </form>
+        </div>
+        <div class="col">
+          <div class="row py-2">
+            <div class="col text-center">
+              <div style="border-color: transparent;" class="card">
+                <h3>BUDGET</h3>
+                <div class="card-body">
+                  <i style="color: rgb(109, 204, 190); font-size:40px ;"
+                    class="fas fa-money-bill-alt m-3"></i>
+                  <p style="color: green; font-size:40px ;" class="card-text">$<span
+                      id="your-budget">0</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col text-center">
+              <div style="border-color: transparent;" class="card">
+                <h3>EXPENSES</h3>
+                <div class="card-body">
+                  <i style="color:  rgb(109, 204, 190); font-size:40px ;"
+                    class="far fa-credit-card m-3"></i>
+                  <p style="color: red; font-size:40px ;" class="card-text">$<span
+                      id="your-expenses">0</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col text-center">
+              <div style="border-color: transparent;" class="card">
+                <h3>BALANCE</h3>
+                <div class="card-body">
+                  <i style="color:  rgb(109, 204, 190); font-size:40px ;"
+                    class="fas fa-dollar-sign m-3"></i>
+                  <p style="color: black; font-size:40px ;" class="card-text" id="col-balance">
+                    $<span id="your-balance">0</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-4">
+          <form action="#" style="border: 1px solid purple;">
+            <div class="form-group px-4 pt-4 mb-0">
+              <label for="budget">Please Enter Your Expense</label>
+              <input type="text" class="form-control" id="input-expense-text">
+              <div class="invalid-feedback">
+                Please type your expense item name!
+              </div>
+            </div>
+            <div class="form-group p-4 mb-0">
+              <label for="budget">Please Enter Expense Amount</label>
+              <input type="number" class="form-control" id="input-expense-number">
+              <div class="invalid-feedback">
+                Please type your expense item price!
+              </div>
+            </div>
+            <div class="form-group px-4 pb-4 mb-0">
+              <button type="submit"
+                style="border: 1px solid purple; background-color: transparent; color: purple;"
+                class="btn btn-primary" id="btn-add-expense">Add Expence</button>
+            </div>
+          </form>
+        </div>
+        <div class="col">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Value</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="expense-list">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
