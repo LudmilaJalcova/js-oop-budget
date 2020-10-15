@@ -1,3 +1,3 @@
 # js-oop-budget
 
-[Demo](https://ludmilajalcova.github.io/js-oop-budget)
+[Demo](https://ludmilaschlegelova.github.io/js-oop-budget)
